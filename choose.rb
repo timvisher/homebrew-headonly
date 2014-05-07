@@ -12,9 +12,9 @@ class Choose < Formula
   def install
     ENV.prepend_create_path 'PYTHONPATH', libexec+'lib/python2.7/site-packages'
 
-    resource("urwid").stage {
+    resource("urwid").stage do
       system "python", "setup.py", "install", "--prefix=#{libexec}"
-    }
+    end
 
     bin.install "choose"
 
